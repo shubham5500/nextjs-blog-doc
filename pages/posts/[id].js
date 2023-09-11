@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/layout";
-import { getAllPostIds, getPostData, sayHello } from "../../lib/posts";
+import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from '../../styles/utils.module.css';
@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const id = params.id;
   const postData = await getPostData(id);
-  const msg = await sayHello();
+//   const msg = await sayHello();
 
   return {
     props: {
